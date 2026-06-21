@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="احجز موعدك الآن في عيادات روزا لطب الأسنان . أفضل عروض تبييض الأسنان، ابتسامة هوليوود، والتقويم بأقساط ميسرة."
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="عيادات روزا | حجز العروض والمواعيد" />
+    <meta
+      property="og:description"
+      content="استفد من خصومات تصل إلى 15% على خدمات الأسنان. احجز موعدك أونلاين الآن."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.rosa-clinics.com" />
+    <meta property="og:image" content="thumb.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <title>عيادات روزا | حجز موعد في جدة</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="thumb.png" type="image/png" />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="text-[#4a3b32]">
+    <!-- Top Bar -->
+    <div
+      class="bg-[#8a6d4d] text-white text-center py-2 px-4 text-xs font-semibold sticky top-0 z-50"
+    >
+      🤩 استخدمي كود الخصم
+      <span class="bg-white text-[#8a6d4d] px-1.5 py-0.5 rounded mx-1"
+        >S15</span
+      >
+      واحصلي على خصم 15% إضافي!
+    </div>
+
+    <!-- Hero Section - Full Cover Photo -->
+    <section
+      class="hero-bg relative h-screen flex items-center justify-center text-center text-white overflow-hidden"
+    >
+      <div class="absolute inset-0 bg-black/40"></div>
+
+      <div class="relative z-10 px-6 max-w-2xl">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+          ابتسامة تستحقينها
+        </h1>
+        <p class="text-xl md:text-2xl mb-8">عيادات روزا لطب الأسنان</p>
+        <a
+          href="#booking-form"
+          id="scrollToForm"
+          class="inline-block bg-[#8a6d4d] hover:bg-[#735a3f] text-white font-semibold px-10 py-4 rounded-2xl text-lg transition-all duration-300"
+        >
+          احجزي موعدك الآن ↓
+        </a>
+      </div>
+
+      <div
+        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-4xl animate-bounce"
+      >
+        ↓
+      </div>
+    </section>
+
+    <!-- Form Section with background.jpg -->
+    <section id="booking-form" class="form-bg py-16">
+      <div class="max-w-lg mx-auto px-4">
+        <div class="form-card p-6 md:p-8 rounded-3xl text-right">
+          <h2 class="text-2xl font-semibold text-[#8a6d4d] mb-1 text-center">
+            احجزي موعدك الآن
+          </h2>
+          <p class="text-xs text-gray-500 mb-8 text-center">
+            العناية الفاخرة التي تستحقينها
+          </p>
+
+          <!-- ==================== YOUR ORIGINAL FORM - 100% UNCHANGED ==================== -->
+          <form id="appointmentForm" class="space-y-4">
+            <div>
+              <label class="block text-xs font-medium text-gray-700 mb-1"
+                >الاسم الكريم</label
+              >
+              <input
+                type="text"
+                name="name"
+                required
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#8a6d4d] focus:outline-none text-right text-sm"
+                placeholder="الاسم ثلاثي"
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-gray-700 mb-1"
+                >رقم الجوال</label
+              >
+              <input
+                type="tel"
+                name="phone"
+                required
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#8a6d4d] focus:outline-none text-left text-sm"
+                placeholder="05xxxxxxxx"
+                dir="ltr"
+              />
+            </div>
+            <div class="flex items-center gap-2 py-1">
+              <input
+                type="checkbox"
+                id="is_gift"
+                name="is_gift"
+                class="w-4 h-4 text-[#8a6d4d] focus:ring-[#8a6d4d] border-gray-300 rounded"
+              />
+              <label
+                for="is_gift"
+                class="text-xs font-bold text-gray-700 cursor-pointer"
+                >إرسال الحجز كهدية لشخص آخر 🎁</label
+              >
+            </div>
+            <div
+              id="gift_fields"
+              class="hidden space-y-3 bg-gray-50 p-3 rounded-lg border border-dashed border-gray-300"
+            >
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1"
+                  >اسم المهدى إليه (الراسل)</label
+                >
+                <input
+                  type="text"
+                  name="sender_name"
+                  class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#8a6d4d] focus:outline-none text-right text-sm"
+                  placeholder="اسم الشخص المستلم"
+                />
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1"
+                  >جوال المهدى إليه</label
+                >
+                <input
+                  type="tel"
+                  name="sender_phone"
+                  class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#8a6d4d] focus:outline-none text-left text-sm"
+                  placeholder="جوال الشخص المستلم"
+                  dir="ltr"
+                />
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-gray-700 mb-1"
+                >اختر العرض المناسب</label
+              >
+              <select
+                name="offer"
+                required
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#8a6d4d] focus:outline-none text-right text-sm bg-white"
+              >
+                <option value="">- اضغط للاختيار -</option>
+                <option value="ابتسامة هوليوود">
+                  ابتسامة هوليوود المشاهير ✨
+                </option>
+                <option value="تبييض وفلورايد">
+                  تبييض الأسنان بالليزر + تنظيف 🦷
+                </option>
+                <option value="زراعة وتقويم">
+                  تقويم الأسنان (أقساط ميسرة) 💎
+                </option>
+              </select>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1"
+                  >الفرع</label
+                >
+                <select
+                  name="branch"
+                  required
+                  class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#8a6d4d] focus:outline-none text-right text-sm bg-white"
+                >
+                  <option value="">- الفرع -</option>
+                  <option value="السامر">فرع السامر</option>
+                  <option value="الصفا">فرع الصفا</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1"
+                  >الجنسية</label
+                >
+                <select
+                  name="nationality"
+                  required
+                  class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#8a6d4d] focus:outline-none text-right text-sm bg-white"
+                >
+                  <option value="">- الجنسية -</option>
+                  <option value="saudi">سعودي</option>
+                  <option value="none_saudi">غير سعودي</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-gray-700 mb-1"
+                >لديك كود خصم؟</label
+              >
+              <div class="flex gap-2">
+                <input
+                  type="text"
+                  id="copon"
+                  name="copon"
+                  class="flex-grow px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#8a6d4d] focus:outline-none text-center text-sm"
+                  placeholder="ادخل الكود هنا"
+                />
+                <button
+                  type="button"
+                  id="apply_coupon"
+                  class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 rounded-lg text-xs font-semibold transition"
+                >
+                  تطبيق
+                </button>
+              </div>
+              <div id="coupon_message" class="text-xs mt-1 font-semibold"></div>
+            </div>
+            <div
+              class="bg-[#fcf8f5] p-2.5 rounded-lg border border-[#f3e1d3] flex justify-between items-center text-sm font-bold"
+            >
+              <span class="text-gray-600">السعر النهائي:</span>
+              <span id="price" class="text-[#8a6d4d]"
+                >يرجى اختيار العرض والفرع</span
+              >
+            </div>
+            <div class="space-y-2 pt-1">
+              <label class="block text-xs font-medium text-gray-700"
+                >طريقة الدفع المفضلة:</label
+              >
+              <div class="grid grid-cols-1 gap-2">
+                <label
+                  class="flex items-center gap-2 p-2.5 rounded-lg border border-gray-200 cursor-pointer hover:bg-gray-50 text-xs"
+                >
+                  <input
+                    type="radio"
+                    name="payment_type"
+                    value="tap"
+                    checked
+                    class="text-[#8a6d4d] focus:ring-[#8a6d4d]"
+                  />
+                  <span>الدفع كاملاً دفعة واحدة</span>
+                </label>
+                <label
+                  class="flex items-center gap-2 p-2.5 rounded-lg border border-gray-200 cursor-pointer hover:bg-gray-50 text-xs"
+                >
+                  <input
+                    type="radio"
+                    name="payment_type"
+                    value="tabby"
+                    class="text-[#8a6d4d] focus:ring-[#8a6d4d]"
+                  />
+                  <span>الدفع بنظام التقسيط شهرياً (Tabby)</span>
+                </label>
+                <label
+                  class="flex items-center gap-2 p-2.5 rounded-lg border border-gray-200 cursor-pointer hover:bg-gray-50 text-xs"
+                >
+                  <input
+                    type="radio"
+                    name="payment_type"
+                    value="tamara"
+                    class="text-[#8a6d4d] focus:ring-[#8a6d4d]"
+                  />
+                  <span>الدفع بنظام التقسيط شهرياً (Tamara)</span>
+                </label>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-[#8a6d4d] hover:bg-[#735a3f] text-white font-semibold py-3 rounded-lg transition duration-300 shadow-md text-sm"
+            >
+              تأكيد الحجز الآن
+            </button>
+          </form>
+          <!-- ==================== END OF ORIGINAL FORM ==================== -->
+
+          <div
+            id="successMessage"
+            class="hidden mt-6 text-green-600 font-semibold text-center text-sm"
+          >
+            تم تسجيل طلبك بنجاح وسيتم التواصل معكم! ✨
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
