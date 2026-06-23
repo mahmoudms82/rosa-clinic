@@ -1,6 +1,10 @@
 /* css/style.css */
 
 /* ====================== GENERAL ====================== */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Cairo", sans-serif;
   margin: 0;

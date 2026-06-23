@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ====================== PRICE CALCULATION ======================
   const offerSelect = document.querySelector('select[name="offer"]');
+  const branchSelect = document.querySelector('select[name="branch"]');
+  const nationalitySelect = document.querySelector('select[name="nationality"]');
   const couponInput = document.getElementById("copon");
   const applyCouponBtn = document.getElementById("apply_coupon");
   const couponMessage = document.getElementById("coupon_message");
@@ -28,28 +30,46 @@ document.addEventListener("DOMContentLoaded", function () {
   let basePrice = 0;
   let discount = 0;
 
+  const offerPrices = {
+    "ديرما بن + إبرة نضارة وتوريد شفاه": 500,
+    "إبرة ديفا للوجه + تنظيف وتلميع أسنان + 5 جلسات شد اللغلوغ + توريد شفاه": 1500,
+    "فراكشنال + سكارليت + بلازما": 1000,
+    "تقشير وجه كامل + إبرة سالمون": 995,
+    "فيلر ستيلاج (1 مللي)": 800,
+    "فيلر ستيلاج (3 مللي)": 1950,
+    "بوتوكس الجبهة": 650,
+    "بوتوكس كامل الوجه": 900,
+    "زراعة أسنان أمريكية + التركيبة + الكشفية": 1700,
+    "تقويم الأسنان (دفعة أولى)": 800,
+    "ابتسامة هوليوود (قسط أول)": 1500,
+    "تبييض وتلميع الأسنان بالليزر": 400,
+    "3 جلسات ليزر لمنطقة واحدة": 250,
+    "3 جلسات ليزر جسم كامل للسيدات": 750,
+    "3 جلسات ليزر جسم كامل للرجال": 850,
+    "5 زيارات لتكسير الدهون الموضعية بدون جراحة": 850
+  };
+
   offerSelect.addEventListener("change", function () {
     const selectedOffer = this.value;
+    basePrice = offerPrices[selectedOffer] || 0;
+    updatePrice();
+  });
 
-    if (selectedOffer === "ابتسامة هوليوود") {
-      basePrice = 2500;
-    } else if (selectedOffer === "تبييض وفلورايد") {
-      basePrice = 600;
-    } else if (selectedOffer === "زراعة وتقويم") {
-      basePrice = 4000;
-    } else {
-      basePrice = 0;
-    }
+  branchSelect.addEventListener("change", updatePrice);
+  nationalitySelect.addEventListener("change", updatePrice);
 
+  couponInput.addEventListener("input", function () {
+    discount = 0;
+    couponMessage.innerHTML = "";
     updatePrice();
   });
 
   applyCouponBtn.addEventListener("click", function () {
     const code = couponInput.value.trim().toUpperCase();
 
-    if (code === "S15") {
-      discount = 0.15;
-      couponMessage.innerHTML = `<span class="text-green-600">✅ تم تطبيق خصم 15% بنجاح!</span>`;
+    if (code === "W30") {
+      discount = 0.20;
+      couponMessage.innerHTML = `<span class="text-green-600">✅ تم تطبيق خصم 20% بنجاح!</span>`;
     } else {
       discount = 0;
       couponMessage.innerHTML = `<span class="text-red-500">❌ كود الخصم غير صحيح</span>`;
@@ -58,12 +78,20 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function updatePrice() {
-    if (basePrice === 0) {
-      priceDisplay.innerText = "يرجى اختيار العرض والفرع";
+    if (basePrice === 0 || !branchSelect.value || !nationalitySelect.value) {
+      priceDisplay.innerText = "يرجى اختيار العرض والفرع والجنسية";
       return;
     }
 
-    const finalPrice = Math.round(basePrice * (1 - discount));
+    // Apply coupon discount
+    let finalPrice = basePrice * (1 - discount);
+
+    // Apply 15% tax for non-Saudi citizens
+    if (nationalitySelect.value === "none_saudi") {
+      finalPrice = finalPrice * 1.15;
+    }
+
+    finalPrice = Math.round(finalPrice);
     priceDisplay.innerText = `${finalPrice} ريال سعودي`;
   }
 
@@ -82,17 +110,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const formData = new FormData(form);
 
-    // Extra fields handling
-    formData.append("is_gift", isGiftCheckbox.checked ? "نعم" : "لا");
-    formData.append(
+    // Extra fields handling using set instead of append to prevent duplicate keys
+    formData.set("is_gift", isGiftCheckbox.checked ? "نعم" : "لا");
+    formData.set(
       "sender_name",
       form.sender_name ? form.sender_name.value || "لا يوجد" : "لا يوجد",
     );
-    formData.append(
+    formData.set(
       "sender_phone",
       form.sender_phone ? form.sender_phone.value || "لا يوجد" : "لا يوجد",
     );
-    formData.append("copon", couponInput.value.trim() || "لم يتم استخدام كود");
+    formData.set("copon", couponInput.value.trim() || "لم يتم استخدام كود");
 
     const scriptURL =
       "https://script.google.com/macros/s/AKfycbxE6CNZHrhDM4PPvyTefSC8IDH1zVlPnXr-0U0jMYIPySA1BNhnx2YTU51OrLlsQ_aL/exec";
@@ -108,7 +136,9 @@ document.addEventListener("DOMContentLoaded", function () {
         form.reset();
         giftFieldsDiv.classList.add("hidden");
         couponMessage.innerHTML = "";
-        priceDisplay.innerText = "يرجى اختيار العرض والفرع";
+        priceDisplay.innerText = "يرجى اختيار العرض والفرع والجنسية";
+        basePrice = 0;
+        discount = 0;
 
         // Scroll to success message smoothly
         successMsg.scrollIntoView({ behavior: "smooth", block: "center" });
