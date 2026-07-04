@@ -1,0 +1,312 @@
+/* 1. إعدادات المتغيرات العامة والألوان */
+:root {
+  --primary-color: #bd9a5f; /* لون روزا الذهبي المميز */
+  --secondary-color: #1a1a1a; /* لون الخلفية الغامق للهيدر */
+  --text-light: #ffffff;
+  --text-dark: #333333;
+  --transition-speed: 0.3s;
+  --max-width: 1200px;
+}
+
+/* 2. ريست عام وضبط الصندوق */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-speed);
+}
+
+/* الكانتينر الموحد */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 3. ستايل الـ Top Bar */
+.top-bar {
+  background-color: #0f0f0f;
+  color: #b0b0b0;
+  font-size: 13px;
+  padding: 8px 0;
+  border-bottom: 1px solid #222;
+}
+
+.top-contact a {
+  margin-left: 20px;
+}
+
+.top-contact i {
+  color: var(--primary-color);
+  margin-left: 5px;
+}
+
+.top-contact a:hover {
+  color: var(--text-light);
+}
+
+.top-social a {
+  margin-right: 15px;
+  font-size: 14px;
+}
+
+.top-social a:hover {
+  color: var(--primary-color);
+}
+
+/* 4. ستايل الـ Main Header */
+.main-header {
+  background-color: var(--secondary-color);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo img {
+  height: 50px;
+  display: block;
+}
+
+/* قائمة التنقل الكبيرة (Desktop) */
+.nav-list {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list > li {
+  position: relative;
+  padding: 10px 15px;
+}
+
+.nav-list > li > a {
+  color: #e0e0e0;
+  font-size: 15px;
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-list > li > a:hover,
+.nav-list > li > a.active {
+  color: var(--primary-color);
+}
+
+/* القوائم المنسدلة (Dropdown Menu) */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #222222;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  border-top: 3px solid var(--primary-color);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all var(--transition-speed);
+  z-index: 999;
+}
+
+.dropdown-menu li {
+  border-bottom: 1px solid #333;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 12px 20px;
+  color: #ccc;
+  font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #2a2a2a;
+  color: var(--primary-color);
+  padding-right: 25px; /* تأثير حركة لطيف عند الـ Hover العربي */
+}
+
+/* إظهار القائمة عند الـ Hover على الـ Desktop */
+@media (min-width: 992px) {
+  .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+/* زر تغيير اللغة والـ Toggle */
+.lang-switch {
+  border: 1px solid var(--primary-color);
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 13px !important;
+}
+
+.lang-switch:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color) !important;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* 5. ستايل الـ Search Box */
+.header-search {
+  position: relative;
+  margin-right: 15px;
+}
+
+.search-trigger {
+  background: none;
+  border: none;
+  color: #e0e0e0;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color var(--transition-speed);
+}
+
+.search-trigger:hover {
+  color: var(--primary-color);
+}
+
+.search-form {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background: #222;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #444;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all var(--transition-speed);
+}
+
+.search-form.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.search-field {
+  background: #111;
+  border: 1px solid #333;
+  color: white;
+  padding: 6px 10px;
+  font-family: "Cairo";
+  outline: none;
+}
+
+.search-submit {
+  background: var(--primary-color);
+  border: none;
+  color: black;
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+/* 6. ريسبونسيف الموبايل والتابلت (Responsive Layout) */
+@media (max-width: 991px) {
+  .top-bar {
+    display: none; /* إخفاء التوب بار في الموبايل لتوفير مساحة */
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #1a1a1a;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+  }
+
+  .nav-menu.active {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px 0;
+  }
+
+  .nav-list > li {
+    padding: 0;
+  }
+
+  .nav-list > li > a {
+    display: block;
+    padding: 12px 25px;
+    border-bottom: 1px solid #252525;
+  }
+
+  /* تعديل الدروب داون في الموبايل ليفتح كـ Accordion */
+  .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    background-color: #111111;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-speed);
+    border-top: none;
+  }
+
+  .dropdown.open .dropdown-menu {
+    max-height: 300px;
+  }
+
+  .dropdown-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-list > li > a.lang-switch {
+    margin: 15px 25px 0;
+    text-align: center;
+  }
+}

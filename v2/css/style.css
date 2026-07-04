@@ -1,0 +1,108 @@
+/* css/style.css */
+
+/* ====================== GENERAL ====================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #4a3b32;
+}
+
+/* ====================== HERO SECTION (cover.jpg) ====================== */
+.hero-bg {
+  background-image: url("../assets/images/cover.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.hero-bg .absolute.inset-0 {
+  background-color: rgba(0, 0, 0, 0.42);
+}
+
+/* ====================== FORM SECTION (background.jpg) ====================== */
+.form-bg {
+  background-image: url("../assets/images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Form Card - Glassmorphism */
+.form-card {
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.18);
+}
+
+/* ====================== ANIMATIONS ====================== */
+.animate-bounce {
+  animation: bounce 2.5s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(18px);
+  }
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ====================== RESPONSIVE ====================== */
+
+/* Mobile */
+@media (max-width: 1024px) {
+  .hero-bg {
+    background-attachment: scroll;
+    background-position: 58% center;
+  }
+
+  .form-bg {
+    background-attachment: scroll;
+  }
+
+  .form-card {
+    margin: 0 1rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .hero-bg {
+    background-position: center center;
+  }
+}
+
+/* Form Elements */
+input:focus,
+select:focus {
+  border-color: #8a6d4d;
+  box-shadow: 0 0 0 3px rgba(138, 109, 77, 0.25);
+  outline: none;
+}
+
+/* Custom Scrollbar */
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #8a6d4d;
+  border-radius: 10px;
+}
+
+/* Price Box */
+.bg-\[\#fcf8f5\] {
+  background-color: #fcf8f5;
+}

@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="احجزي موعدك الآن في عيادات روزا لطب الأسنان والتجميل واحصلي على أفضل العروض والخصومات."
+    />
+
+    <!-- Open Graph / Social Media Preview -->
+    <meta property="og:title" content="✨ عيادات روزا للتجميل وطب الأسنان - احجزي موعدك" />
+    <meta
+      property="og:description"
+      content="خصم 20% على ابتسامة هوليوود، تبييض الأسنان، والتقويم الثابت. احجزي موعدك أونلاين الآن واستمتعي بابتسامة نجوم ✨"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://mahmoudms82.github.io/rosa-clinic/booking.html"
+    />
+    <meta
+      property="og:image"
+      content="https://mahmoudms82.github.io/rosa-clinic/assets/images/logo-white.png"
+    />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="420" />
+    <meta property="og:site_name" content="عيادات روزا" />
+
+    <meta name="theme-color" content="#8a6d4d" />
+
+    <title>احجزي موعدك الآن - عيادات روزا</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="assets/images/logo-white.png" type="image/png" />
+  </head>
+  <body>
+    <!-- Top Info Bar -->
+    <div class="top-bar">
+      <div class="container container-flex">
+        <div class="top-contact">
+          <a href="tel:0537776424"><i class="fas fa-phone"></i> 0537776424</a>
+          <a href="mailto:info@rosa-clinics.com"><i class="fas fa-envelope"></i> info@rosa-clinics.com</a>
+        </div>
+        <div class="top-social">
+          <a href="https://www.facebook.com/people/%D8%B9%D9%8A%D8%A2%D8%AD%D8%A7%D8%AA-%D8%B1%D9%88%D8%B2%D8%A7-Rosa-clinics/61560345038199/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/rosa.clinics93/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@rosa.clinics7?lang=ar" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Sticky Navigation Header -->
+    <header class="main-header">
+      <div class="container container-flex">
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/images/logo-white.png" alt="عيادات روزا" />
+          </a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="افتح القائمة">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <nav class="nav-menu" id="navMenu">
+          <ul class="nav-list">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="about.html">عن عيادات روزا</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle">خدماتنا <i class="fas fa-chevron-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="skin-cosmetics.html">قسم الجلدية والتجميل</a></li>
+                <li><a href="dental.html">قسم الأسنان</a></li>
+                <li><a href="nutrition.html">التغذية العلاجية</a></li>
+                <li><a href="physical-therapy.html">قسم العلاج الطبيعي</a></li>
+                <li><a href="body-contouring.html">قسم تنسيق القوام</a></li>
+                <li><a href="cupping.html">قسم الحجامة</a></li>
+              </ul>
+            </li>
+            <li><a href="booking.html" class="active">العروض</a></li>
+            <li><a href="#footer-contact">اتصل بنا</a></li>
+            <li><a href="booking.html" class="btn-cta">احجزي الآن</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-search">
+          <button class="search-trigger" id="searchTrigger" aria-label="افتح البحث">
+            <i class="fas fa-search"></i>
+          </button>
+          <form role="search" method="get" class="search-form" id="searchForm" action="#">
+            <input type="search" class="search-field" placeholder="البحث..." name="s" />
+            <button type="submit" class="search-submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Banner -->
+    <div class="page-banner">
+      <div class="container">
+        <h1>عروض عيادات روزا وحجز المواعيد</h1>
+        <p class="page-banner-desc">استمتعي بأقوى عروض العناية الفاخرة والتجميل، واحجزي موعدك الآن في ثوانٍ معدودة</p>
+      </div>
+    </div>
+
+    <!-- Booking Form Section -->
+    <section class="booking-section form-bg">
+      <div class="max-w-lg mx-auto px-4">
+        <div class="form-card text-right">
+          <h2 class="text-2xl font-semibold text-[#8a6d4d] mb-1 text-center">
+            احجزي موعدك الآن
+          </h2>
+          <p class="text-xs text-gray-500 mb-8 text-center">
+            العناية الفاخرة التي تستحقينها
+          </p>
+
+          <!-- ==================== APPOINTMENT FORM ==================== -->
+          <form id="appointmentForm" class="space-y-4">
+            <div>
+              <label class="block text-xs font-medium text-gray-700 mb-1">اسم الكريم</label>
+              <input
+                type="text"
+                name="name"
+                required
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#8a6d4d] focus:outline-none text-right text-sm"
+                placeholder="الاسم"
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-gray-700 mb-1">رقم الجوال</label>
+              <input
+                type="tel"
+                name="phone"
+                required
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#8a6d4d] focus:outline-none text-left text-sm"
+                placeholder="05xxxxxxxx"
+                dir="ltr"
+              />
+            </div>
+            <div class="flex items-center gap-2 py-1">
+              <input
+                type="checkbox"
+                id="is_gift"
+                name="is_gift"
+                class="w-4 h-4 text-[#8a6d4d] focus:ring-[#8a6d4d] border-gray-300 rounded"
+              />
+              <label for="is_gift" class="text-xs font-bold text-gray-700 cursor-pointer">إرسال الحجز كهدية لشخص آخر 🎁</label>
+            </div>
+            <div
+              id="gift_fields"
+              class="hidden space-y-3 bg-gray-50 p-3 rounded-lg border border-dashed border-gray-300"
+            >
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1">اسم المهدى إليه (المستلم)</label>
+                <input
+                  type="text"
+                  name="sender_name"
+                  class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#8a6d4d] focus:outline-none text-right text-sm"
+                  placeholder="اسم الشخص المستلم"
+                />
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1">جوال المهدى إليه</label>
+                <input
+                  type="tel"
+                  name="sender_phone"
+                  class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#8a6d4d] focus:outline-none text-left text-sm"
+                  placeholder="جوال الشخص المستلم"
+                  dir="ltr"
+                />
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-gray-700 mb-1">اختر العرض المناسب</label>
+              <select
+                name="offer"
+                required
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#8a6d4d] focus:outline-none text-right text-sm bg-white"
+              >
+                <option value="">- اضغط للاختيار -</option>
+                <option value="ديرما بن + إبرة نضارة وتوريد شفاه">ديرما بن + إبرة نضارة وتوريد شفاه (500 ريال) 🌸</option>
+                <option value="إبرة ديفا للوجه + تنظيف وتلميع أسنان + 5 جلسات شد اللغلوغ + توريد شفاه">إبرة ديفا للوجه + تنظيف وتلميع أسنان + 5 جلسات شد اللغلوغ + توريد شفاه (1500 ريال) ✨</option>
+                <option value="فراكشنال + سكارليت + بلازما">فراكشنال + سكارليت + بلازما (1000 ريال) 💎</option>
+                <option value="تقشير وجه كامل + إبرة سالمون">تقشير وجه كامل + إبرة سالمون (995 ريال) 🧴</option>
+                <option value="فيلر ستيلاج (1 مللي)">فيلر ستيلاج - 1 مللي (800 ريال) 💉</option>
+                <option value="فيلر ستيلاج (3 مللي)">فيلر ستيلاج - 3 مللي (1950 ريال) 💉</option>
+                <option value="بوتوكس الجبهة">بوتوكس الجبهة (650 ريال) 💉</option>
+                <option value="بوتوكس كامل الوجه">بوتوكس كامل الوجه (900 ريال) 💉</option>
+                <option value="زراعة أسنان أمريكية + التركيبة + الكشفية">زراعة أسنان أمريكية + التركيبة + الكشفية (1700 ريال) 🦷</option>
+                <option value="تقويم الأسنان (دفعة أولى)">تقويم الأسنان - دفعة أولى (800 ريال) 🦷</option>
+                <option value="ابتسامة هوليوود (قسط أول)">ابتسامة هوليوود - قسط أول (1500 ريال) 🦷</option>
+                <option value="تبييض وتلميع الأسنان بالليزر">تبييض وتلميع أسنان بالليزر (400 ريال) 🦷</option>
+                <option value="3 جلسات ليزر لمنطقة واحدة">3 جلسات ليزر لمنطقة واحدة (250 ريال) ⚡</option>
+                <option value="3 جلسات ليزر جسم كامل للسيدات">3 جلسات ليزر جسم كامل للسيدات (750 ريال) ⚡</option>
+                <option value="3 جلسات ليزر جسم كامل للرجال">3 جلسات ليزر جسم كامل للرجال (850 ريال) ⚡</option>
+                <option value="5 زيارات لتكسير الدهون الموضعية بدون جراحة">5 زيارات لتكسير الدهون الموضعية بدون جراحة (850 ريال فقط) 🏃‍♀️</option>
+              </select>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1">الفرع</label>
+                <select
+                  name="branch"
+                  required
+                  class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#8a6d4d] focus:outline-none text-right text-sm bg-white"
+                >
+                  <option value="">- الفرع -</option>
+                  <option value="السلامة">فرع السلامة</option>
+                  <option value="الصفا">فرع الصفا</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1">الجنسية</label>
+                <select
+                  name="nationality"
+                  required
+                  class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#8a6d4d] focus:outline-none text-right text-sm bg-white"
+                >
+                  <option value="">- الجنسية -</option>
+                  <option value="saudi">سعودي</option>
+                  <option value="none_saudi">غير سعودي</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-gray-700 mb-1">لديك كود خصم؟</label>
+              <div class="flex gap-2">
+                <input
+                  type="text"
+                  id="copon"
+                  name="copon"
+                  class="flex-grow px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#8a6d4d] focus:outline-none text-center text-sm"
+                  placeholder="ادخل الكود هنا"
+                />
+                <button
+                  type="button"
+                  id="apply_coupon"
+                  class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 rounded-lg text-xs font-semibold transition"
+                >
+                  تطبيق
+                </button>
+              </div>
+              <div id="coupon_message" class="text-xs mt-1 font-semibold"></div>
+            </div>
+            <div
+              class="bg-[#fcf8f5] p-2.5 rounded-lg border border-[#f3e1d3] flex justify-between items-center text-sm font-bold"
+            >
+              <span class="text-gray-600">السعر النهائي:</span>
+              <span id="price" class="text-[#8a6d4d]">يرجى اختيار العرض والفرع والجنسية</span>
+            </div>
+            <div class="space-y-2 pt-1">
+              <label class="block text-xs font-medium text-gray-700">طريقة الدفع المفضلة:</label>
+              <div class="grid grid-cols-1 gap-2">
+                <label
+                  class="flex items-center gap-2 p-2.5 rounded-lg border border-gray-200 cursor-pointer hover:bg-gray-50 text-xs"
+                >
+                  <input
+                    type="radio"
+                    name="payment_type"
+                    value="tap"
+                    checked
+                    class="text-[#8a6d4d] focus:ring-[#8a6d4d]"
+                  />
+                  <span>الدفع كاملاً دفعة واحدة</span>
+                </label>
+                <label
+                  class="flex items-center gap-2 p-2.5 rounded-lg border border-gray-200 cursor-pointer hover:bg-gray-50 text-xs"
+                >
+                  <input
+                    type="radio"
+                    name="payment_type"
+                    value="tabby"
+                    class="text-[#8a6d4d] focus:ring-[#8a6d4d]"
+                  />
+                  <span>الدفع بنظام التقسيط شهرياً (Tabby)</span>
+                </label>
+                <label
+                  class="flex items-center gap-2 p-2.5 rounded-lg border border-gray-200 cursor-pointer hover:bg-gray-50 text-xs"
+                >
+                  <input
+                    type="radio"
+                    name="payment_type"
+                    value="tamara"
+                    class="text-[#8a6d4d] focus:ring-[#8a6d4d]"
+                  />
+                  <span>الدفع بنظام التقسيط شهرياً (Tamara)</span>
+                </label>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-[#8a6d4d] hover:bg-[#735a3f] text-white font-semibold py-3 rounded-lg transition duration-300 shadow-md text-sm"
+            >
+              تأكيد الحجز الآن
+            </button>
+          </form>
+          <!-- ==================== END OF FORM ==================== -->
+
+          <div
+            id="successMessage"
+            class="hidden mt-6 text-green-600 font-semibold text-center text-sm"
+          >
+            تم تسجيل طلبك بنجاح وسيتم التواصل معكم! ✨
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="container footer-grid">
+        <div class="footer-col footer-about">
+          <img src="assets/images/logo-white.png" alt="عيادات روزا" />
+          <p>عيادات روزا للتجميل وطب الأسنان، نقدم خدمات رعاية طبية وتجميلية متميزة وفريدة من نوعها بأحدث التقنيات وأفضل الأطباء المتخصصين في جدة.</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/people/%D8%B9%D9%8A%D8%A2%D8%AD%D8%A7%D8%AA-%D8%B1%D9%88%D8%B2%D8%A7-Rosa-clinics/61560345038199/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/rosa.clinics93/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@rosa.clinics7?lang=ar" target="_blank"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>أقسام العيادة</h3>
+          <ul class="footer-links">
+            <li><a href="skin-cosmetics.html">الجلدية والتجميل</a></li>
+            <li><a href="dental.html">طب وجراحة الأسنان</a></li>
+            <li><a href="nutrition.html">التغذية العلاجية</a></li>
+            <li><a href="body-contouring.html">تنسيق القوام والرشاقة</a></li>
+            <li><a href="cupping.html">الحجامة الطبية</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col" id="footer-contact">
+          <h3>تواصل معنا</h3>
+          <ul class="footer-contact">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <div class="footer-contact-text">
+                <strong>فرع السلامة:</strong> شارع صاري، حي السلامة، جدة
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <div class="footer-contact-text">
+                <strong>فرع الصفا:</strong> حي الصفا، جدة
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-phone"></i>
+              <div class="footer-contact-text">0537776424</div>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <div class="footer-contact-text">info@rosa-clinics.com</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>أوقات العمل</h3>
+          <ul class="footer-hours-list">
+            <li>
+              <span class="day">السبت - الخميس</span>
+              <span class="hours">١٠:٠٠ ص - ١٠:٠٠ م</span>
+            </li>
+            <li>
+              <span class="day">الجمعة</span>
+              <span class="hours">٢:٠٠ م - ١٠:٠٠ م</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>&copy; ٢٠٢٦ عيادات روزا. جميع الحقوق محفوظة.</p>
+        <div class="footer-bottom-links">
+          <a href="#">سياسة الخصوصية</a>
+          <a href="#">الشروط والأحكام</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/booking.js"></script>
+  </body>
+</html>
